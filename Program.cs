@@ -271,7 +271,7 @@ class Islander
 
     void IncreaseSpeed()
     {
-        Debug.Log("an islander was set on fire and has recovered")
+        Debug.Log("an islander was set on fire and has recovered");
     }
 }
 
@@ -303,5 +303,42 @@ class Boat
     {
         if (beach.HasFireOnIt())
             Debug.Log("game won");
+    }
+}
+
+// THIRD SESSION
+
+public class Meal
+{
+    Ingredient[] ingredients;
+
+    public Meal(Ingredient[] newIngredients)
+    {
+        ingredients = newIngredients;
+    }
+
+    public Meal()
+    {
+        ingredients = new Ingredient[0];
+    }
+}
+
+public class Whatever
+{
+    private void DoThings()
+    {
+        Meal myFirstMeal = new Meal();
+    }
+}
+
+public class StalkerEnemy
+{
+    private GameObject player;
+    private NavMeshAgent enemyAgent;
+
+    private void RefreshPlayerDestination()
+    {
+        Vector3 playerPos = player.transform.position;
+        enemyAgent.SetDestination(playerPos);
     }
 }
